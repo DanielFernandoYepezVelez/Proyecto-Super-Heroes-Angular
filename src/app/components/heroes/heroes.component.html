@@ -1,0 +1,21 @@
+<h1>Héroes <small>Marvel Y DC</small></h1>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let hero of heroes; let i = index">
+        <img [src]="hero.img" class="card-img-top img-fluid" [alt]="hero.nombre" />
+        <div class="card-body">
+            <h5 class="card-title">{{ hero.nombre }}</h5>
+            <p class="card-text">{{ hero.bio }}</p>
+            <p class="card-text">
+                <small class="text-muted">{{ hero.aparicion }}</small>
+            </p>
+
+            <!-- Aqui Me Estoy Moviendo Con El Boton y la funcion click()-->
+            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
+        Ver mas
+      </button>
+            <!-- Aqui Me Estoy Moviendo Con RouterLink y la ruta exacta, no la adjunta a la ruta padre, gracias a poner el / -->
+            <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block">Ver mas</a> -->
+        </div>
+    </div>
+</div>
